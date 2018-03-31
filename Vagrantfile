@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
     oso.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--memory", 2000]
       v.customize ["modifyvm", :id, "--name", "oso-master"]
+      v.customize ["sharedfolder", "add", :id, "--name", "repo", "--hostpath", "/media/c7"]
     end
   end
 
